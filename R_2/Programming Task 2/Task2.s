@@ -7,10 +7,10 @@ msg2: .asciiz "Printing array: "
 dataArray:
 
     add s0, x0, x0        # i = 0
-    addi a0, x0, 7        # num
+    addi a0, x0, 7      # num
     la s1, array          # s1 = address of array 
     addi t0, x0, 10
-Loop:
+loop_fill:
 
     bge s0, t0, exit
     jal ra, compare
@@ -22,7 +22,7 @@ Loop:
     sw  a3, 0(t2)        # store t1 to b[i]
 
     addi s0, s0, 1
-    j Loop
+    j loop_fill
 
      
 
@@ -66,7 +66,7 @@ exit:
     addi t0, x0, 10
      la s1, array 
 
-loop:
+loop_print:
 
     bge s0, t0, exit1
 
@@ -85,7 +85,7 @@ loop:
 
 
     addi s0, s0, 1
-    j loop
+    j loop_print
 
 exit1: 
      
