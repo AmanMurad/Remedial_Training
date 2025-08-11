@@ -7,7 +7,7 @@ msg2: .asciiz "Printing array: "
 dataArray:
 
     add s0, x0, x0        # i = 0
-    addi a0, x0, 100      # num
+    addi a0, x0, 7        # num
     la s1, array          # s1 = address of array 
     addi t0, x0, 10
 Loop:
